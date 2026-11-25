@@ -24,10 +24,11 @@ jobs:
           gradle-version: '9.5.0'
 
       - name: Build Debug APK
+        working-directory: .github/workflows
         run: gradle assembleDebug
 
       - name: Upload Jarvis APK
         uses: actions/upload-artifact@v7
         with:
           name: Jarvis-AI-Debug-APK
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: .github/workflows/app/build/outputs/apk/debug/app-debug.apk
